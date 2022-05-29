@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 8} 
+\author{Kummitha Jhanavi (CS21BTECH11032)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+
+
+
+% Blocks frame
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}
+       
+        If x and y are independent exponential random variable with common parameter $\lambda$. Show that $\frac{x}{(x+y)}$ is a uniformly distributed random variable in (0,1).
+    \end{block}
+    
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}
+
+\end{block}
+
+X,Y are independent identically distributed exponential random variables 
+\begin{equation}
+    Z=\frac{X}{X+Y}
+
+$F_{Z}$(z) =P($\frac{X}{X+Y}$$\leq$z)=P($\frac{X}{Y}$$\leq \frac{z}{1-z}$)
+
+          =P(X \leq\frac{zY}{1-z})= \int_{0}^{\infty}\int_{0}^{\frac{zy}{1-z}} f_{XY}(x,y)dxdy
+ \end{equation}   
+ \begin{equation}
+    $f_{Z}$(z)=\int_{0}^{\infty}\frac{y}{(1-z)^2}f_{XY}(\frac{zy}{1-z},y)dy  
+ \end{equation}
+ \begin{center}
+     = $\frac{1}{(1-z)^2}$\int_{0}^{\infty}y\frac{1}{\lambda^2}e^{-(z/(1-z)+1)(y/ \lambda)}dy
+     
+     = \int_{0}^{\infty}ue^{-u} du=1, 0<z<1
+     
+     =$\frac{X}{X+Y}$ \sim U(0,1)
+ \end{center}
+\end{frame}
+
+\end{document}
